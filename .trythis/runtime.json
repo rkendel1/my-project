@@ -1,0 +1,29 @@
+{
+  "schema": "runtime-manifest/v1",
+  "provider": "adopted",
+  "repository": "ws-c83fb8102526e09e",
+  "commit": "generated",
+  "language": "JavaScript",
+  "framework": null,
+  "runtime": "node",
+  "package_manager": "npm",
+  "workspace": "ws-c83fb8102526e09e",
+  "install": "npm install",
+  "build": null,
+  "start": "npm run dev",
+  "health": "/health",
+  "port": 3000,
+  "environment": {
+    "required": [],
+    "optional": [
+      "PORT"
+    ],
+    "detected": []
+  },
+  "capabilities": [
+    "adopted",
+    "portable"
+  ],
+  "confidence": 0.97,
+  "runtime_id": "ws-c83fb8102526e09e-node"
+}
