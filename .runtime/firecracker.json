@@ -1,0 +1,6 @@
+{
+  "lock": "runtime.lock",
+  "machine": "standard",
+  "resume_ms": 300,
+  "snapshot": "snapshot-ws-c83fb8102526e09e"
+}
