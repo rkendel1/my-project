@@ -1,0 +1,90 @@
+{
+  "nodes": [
+    {
+      "command": "npm install",
+      "depends_on": [],
+      "id": "install",
+      "optional": false,
+      "phase": "install",
+      "retry": 1,
+      "timeout": 300
+    },
+    {
+      "command": "analyze dependencies",
+      "depends_on": [
+        "install"
+      ],
+      "id": "analyze-dependencies",
+      "optional": false,
+      "phase": "analyze-dependencies",
+      "retry": 0,
+      "timeout": 120
+    },
+    {
+      "command": "heal dependencies",
+      "depends_on": [
+        "analyze-dependencies"
+      ],
+      "id": "heal-dependencies",
+      "optional": false,
+      "phase": "heal-dependencies",
+      "retry": 0,
+      "timeout": 120
+    },
+    {
+      "command": "regenerate lockfile",
+      "depends_on": [
+        "heal-dependencies"
+      ],
+      "id": "regenerate-lockfile",
+      "optional": false,
+      "phase": "regenerate-lockfile",
+      "retry": 0,
+      "timeout": 300
+    },
+    {
+      "command": "stabilize build plan",
+      "depends_on": [
+        "regenerate-lockfile"
+      ],
+      "id": "stabilize-build",
+      "optional": false,
+      "phase": "stabilize-build",
+      "retry": 1,
+      "timeout": 120
+    },
+    {
+      "command": "validate environment",
+      "depends_on": [
+        "stabilize-build"
+      ],
+      "id": "env-validate",
+      "optional": false,
+      "phase": "environment-validation",
+      "retry": 0,
+      "timeout": 120
+    },
+    {
+      "command": "npm run dev",
+      "depends_on": [
+        "env-validate"
+      ],
+      "id": "start",
+      "optional": false,
+      "phase": "start",
+      "retry": 1,
+      "timeout": 300
+    },
+    {
+      "command": "verify health endpoint",
+      "depends_on": [
+        "start"
+      ],
+      "id": "health-verify",
+      "optional": false,
+      "phase": "health-verification",
+      "retry": 2,
+      "timeout": 120
+    }
+  ]
+}
