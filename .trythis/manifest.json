@@ -1,13 +1,11 @@
 {
   "artifacts": {
-    "adoption": "adoption.json",
-    "execution": "execution.json",
-    "health": "health.json",
-    "runtime": "runtime.json",
-    "workspace": "workspace.json"
+    "history": "history.json",
+    "launch": "launch.json"
   },
-  "generated_at": 1783621567,
-  "repository": "ws-c83fb8102526e09e",
+  "generated_at": 1783627224,
+  "purpose": "lookup-last-good-launch",
+  "repository": "ws-4af4afdb3401e2dd",
   "schema": "trythis.manifest/v1",
-  "workspace": "ws-c83fb8102526e09e"
+  "workspace": "ws-4af4afdb3401e2dd"
 }
